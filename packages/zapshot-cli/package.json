@@ -2,7 +2,9 @@
   "name": "zapshot-cli",
   "version": "0.4.0",
   "description": "JavaScript benchmarking tool for Node.js and Browser",
-  "main": "index.js",
+  "bin": {
+    "zapshot": "./dist/cli.js"
+  },
   "scripts": {
     "test": "jest"
   },
@@ -28,5 +30,8 @@
     "@turf/center-median": "^6.0.1",
     "chalk": "^2.4.1",
     "lodash": "^4.17.10"
+  },
+  "babel": {
+    "extends": "../../.babelrc"
   }
 }
