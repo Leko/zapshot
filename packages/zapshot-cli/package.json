@@ -1,0 +1,27 @@
+{
+  "name": "zapshot-cli",
+  "version": "0.4.0",
+  "description": "JavaScript benchmarking tool for Node.js and Browser",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Leko/zapshot.git"
+  },
+  "keywords": [
+    "benchmark",
+    "diff",
+    "compare",
+    "performance",
+    "universal",
+    "isomorphic"
+  ],
+  "author": "Leko <leko.noor@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Leko/zapshot/issues"
+  },
+  "homepage": "https://github.com/Leko/zapshot#readme"
+}
