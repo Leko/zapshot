@@ -23,5 +23,10 @@
   "bugs": {
     "url": "https://github.com/Leko/zapshot/issues"
   },
-  "homepage": "https://github.com/Leko/zapshot#readme"
+  "homepage": "https://github.com/Leko/zapshot#readme",
+  "dependencies": {
+    "@turf/center-median": "^6.0.1",
+    "chalk": "^2.4.1",
+    "lodash": "^4.17.10"
+  }
 }
