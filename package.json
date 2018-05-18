@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint --cache .",
+    "build": "lerna exec -- ../../node_modules/.bin/babel src --out-dir dist",
     "flow": "flow --show-all-errors",
     "test": "jest"
   },
@@ -28,6 +29,13 @@
   },
   "homepage": "https://github.com/Leko/zapshot#readme",
   "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.47",
+    "@babel/core": "^7.0.0-beta.47",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.47",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.47",
+    "@babel/preset-env": "^7.0.0-beta.47",
+    "@babel/preset-flow": "^7.0.0-beta.47",
+    "@babel/register": "^7.0.0-beta.47",
     "babel-eslint": "^8.2.3",
     "eslint": "^4.19.1",
     "eslint-config-standard": "^11.0.0",
