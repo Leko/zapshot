@@ -1,5 +1,6 @@
 // @flow
 import path from 'path'
+// $FlowFixMe(perf_hooks-exists)
 import { performance, PerformanceObserver } from 'perf_hooks'
 import { Progress, type Logger } from './progress'
 import { Metric, type Call } from './metric'

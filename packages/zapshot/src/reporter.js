@@ -27,7 +27,7 @@ export const report = (report: Report, { precision = 2, quiet, threshold }: Repo
       const totalMaxWidth = c.marks.length > 0 ? c.marks[0].total.toFixed(precision).length : 0
       for (let mark of c.marks) {
         const percentage = (mark.total / c.total * 100).toFixed(0).padStart(5)
-        console.log(`${percentage.padStart(legend.length - 1)}% ${mark.name.padStart(longestMarkWidth)}: ${mark.total.toFixed(precision).padStart(totalMaxWidth)}ms (${mark.times} times) ${humanizeDiff(mark.diff, mark.diffPercentage, precision, 'ms')}`)
+        console.log(`${percentage.padStart(legend.length - 1)}% ${mark.name.padStart(longestMarkWidth)}: ${mark.total.toFixed(precision).padStart(totalMaxWidth)}ms (${mark.times} times) ${humanizeDiff(mark.diff, mark.diffPercentage, 'ms', { precision, threshold })}`)
       }
     }
   }
