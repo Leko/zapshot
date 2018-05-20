@@ -9,7 +9,7 @@
   "scripts": {
     "prepare": "npm run build",
     "build": "../../node_modules/.bin/babel src --out-dir dist",
-    "test": "../../node_modules/.bin/jest"
+    "test": "../../node_modules/.bin/jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -32,8 +32,17 @@
   "babel": {
     "extends": "../../.babelrc"
   },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/*.{js,jsx}"
+    ]
+  },
   "dependencies": {
     "chalk": "^2.4.1",
     "lodash": "^4.17.10"
+  },
+  "devDependencies": {
+    "nothing-mock": "^1.0.2",
+    "sinon": "^5.0.7"
   }
 }
