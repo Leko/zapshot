@@ -29,10 +29,6 @@ jobs:
       - run: npm test
       - run: bash <(curl -s https://codecov.io/bash)
 
-  node-v6:
-    <<: *base
-    docker:
-      - image: node:6
   node-v8:
     <<: *base
     docker:

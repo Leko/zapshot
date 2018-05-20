@@ -5,6 +5,9 @@
   "bin": {
     "zapshot": "./dist/cli.js"
   },
+  "engines": {
+    "node": ">=8.0"
+  },
   "scripts": {
     "prepare": "npm run build",
     "build": "../../node_modules/.bin/babel src --out-dir dist",

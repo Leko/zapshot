@@ -4,7 +4,7 @@
   "description": "JavaScript benchmarking tool for Node.js and Browser",
   "main": "dist/index.js",
   "engines": {
-    "node": ">=6.0"
+    "node": ">=8.0"
   },
   "scripts": {
     "prepare": "npm run build",

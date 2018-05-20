@@ -18,7 +18,7 @@ npm i -g zapshot-cli
 ```
 
 ### Requirement
-- Node.js 6+
+- Node.js 8+
 
 ## Usage
 ```
