@@ -30,6 +30,6 @@ export class Metrics {
   }
 
   getByName (name: string): ?Metric {
-    return this.metrics[name]
+    return this.metrics[name] || null
   }
 }
