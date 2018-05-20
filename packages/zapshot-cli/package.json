@@ -7,8 +7,8 @@
   },
   "scripts": {
     "prepare": "npm run build",
-    "build": "babel src --out-dir dist",
-    "test": "jest"
+    "build": "../../node_modules/.bin/babel src --out-dir dist",
+    "test": "../../node_modules/.bin/jest"
   },
   "repository": {
     "type": "git",
