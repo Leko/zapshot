@@ -51,6 +51,7 @@ If you want to update snapshots, please re-run `zapshot --init benchmark.js`.
 ```
 git clone git@github.com:Leko/zapshot.git
 cd zapshot
+npm i
 npm run bootstrap
 ```
 
