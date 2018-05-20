@@ -1,6 +1,6 @@
 {
   "name": "zapshot-cli",
-  "version": "0.4.0",
+  "version": "0.1.0",
   "description": "JavaScript benchmarking tool to help continuous performance optimization",
   "bin": {
     "zapshot": "./dist/cli.js"
@@ -20,7 +20,7 @@
     "glob": "^7.1.2",
     "lodash": "^4.17.10",
     "napajs": "^0.2.3",
-    "zapshot": "*"
+    "zapshot": "^0.1.0"
   },
   "repository": {
     "type": "git",
