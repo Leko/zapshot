@@ -3,6 +3,11 @@
   "version": "0.1.1",
   "description": "JavaScript benchmarking tool to help continuous performance optimization",
   "main": "dist/index.js",
+  "files": [
+    "package.json",
+    "dist",
+    "src"
+  ],
   "engines": {
     "node": ">=8.0"
   },
