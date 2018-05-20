@@ -1,13 +1,53 @@
 #!/usr/bin/env node
-import yargs from 'yargs'
-import pkg from '../package.json'
+// @flow
+import { cpus } from 'os'
+import glob from 'glob'
+import chalk from 'chalk'
+import flatten from 'lodash/flatten'
+import _debug from 'debug'
+import { type Metric, Metrics, Report, measure, report } from 'zapshot'
+import { ProgressLogger } from './progress-logger'
+import { target, flags, type CLIOptions } from './args'
+import { load, save } from './cache'
 
-const { _: argv, ...flags } = yargs
-  .version(pkg.version)
-  .option('init', {
-    describe: 'Create initial metrics',
-    type: 'boolean',
-  })
-  .argv
+type Result<T> = {
+  value: T,
+}
 
-console.log(argv, flags)
+const main = async (targets, flags) => {
+  debug('start measuring:', targets.length, 'cases')
+  const { step } = flags
+  const option = {
+    step,
+    progressLogger: new ProgressLogger(),
+  }
+  const resultsList: Array<Array<Metric>> = []
+  for (let target of targets) {
+    resultsList.push(await measure(target, option))
+  }
+  const metrics: Metrics = Metrics.fromArray(flatten(resultsList))
+  const beforeMetrics: ?Metrics = load(flags)
+
+  debug('start reporting:', metrics.length, 'metrics')
+  const reportOptions = {
+    quiet: flags.quiet,
+    threshold: flags.threshold,
+  }
+  await report(Report.fromMetricses(metrics, beforeMetrics), reportOptions)
+  save(metrics, flags)
+}
+
+const debug = _debug('zapshot:cli')
+const targets = glob.sync(target, { absolute: true })
+
+debug('args:', targets)
+debug('flags:', flags)
+if (targets.length === 0) {
+  console.error(chalk.yellow('No files specified'))
+  process.exit(1)
+}
+
+main(targets, flags).catch((e) => {
+  console.error(chalk.red(e.stack))
+  process.exit(1)
+})
