@@ -19,7 +19,7 @@
     "debug": "^3.1.0",
     "glob": "^7.1.2",
     "lodash": "^4.17.10",
-    "napajs": "^0.2.3",
+    "yargs": "^11.0.0",
     "zapshot": "^0.1.0"
   },
   "repository": {
