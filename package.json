@@ -1,0 +1,57 @@
+{
+  "name": "zapshot",
+  "private": true,
+  "version": "0.4.0",
+  "description": "JavaScript benchmarking tool for Node.js and Browser",
+  "main": "index.js",
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "lint": "eslint --cache .",
+    "lint:fix": "eslint --fix --cache .",
+    "build": "lerna run build",
+    "flow": "flow --show-all-errors",
+    "test": "lerna run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Leko/zapshot.git"
+  },
+  "keywords": [
+    "benchmark",
+    "diff",
+    "compare",
+    "performance",
+    "universal",
+    "isomorphic"
+  ],
+  "author": "Leko <leko.noor@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Leko/zapshot/issues"
+  },
+  "homepage": "https://github.com/Leko/zapshot#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.47",
+    "@babel/core": "^7.0.0-beta.47",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.47",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.47",
+    "@babel/preset-env": "^7.0.0-beta.47",
+    "@babel/preset-flow": "^7.0.0-beta.47",
+    "@babel/register": "^7.0.0-beta.47",
+    "@ljharb/eslint-config": "^12.2.1",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^8.2.3",
+    "babel-jest": "^22.4.4",
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-flowtype": "^2.46.3",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "flow-bin": "^0.72.0",
+    "jest": "^22.4.3",
+    "lerna": "^2.9.0",
+    "regenerator-runtime": "^0.11.1"
+  }
+}

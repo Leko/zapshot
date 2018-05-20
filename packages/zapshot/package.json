@@ -1,0 +1,48 @@
+{
+  "name": "zapshot",
+  "version": "0.1.1",
+  "description": "JavaScript benchmarking tool to help continuous performance optimization",
+  "main": "dist/index.js",
+  "engines": {
+    "node": ">=8.0"
+  },
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "../../node_modules/.bin/babel src --out-dir dist",
+    "test": "../../node_modules/.bin/jest --coverage"
+  },
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "lodash": "^4.17.10"
+  },
+  "devDependencies": {
+    "nothing-mock": "^1.0.2",
+    "sinon": "^5.0.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Leko/zapshot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Leko/zapshot/issues"
+  },
+  "homepage": "https://github.com/Leko/zapshot/tree/master/packages/zapshot",
+  "author": "Leko <leko.noor@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "benchmark",
+    "diff",
+    "compare",
+    "performance",
+    "universal",
+    "isomorphic"
+  ],
+  "babel": {
+    "extends": "../../.babelrc"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/*.{js,jsx}"
+    ]
+  }
+}
