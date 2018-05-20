@@ -1,6 +1,5 @@
 // @flow
 import fs from 'fs'
-import chalk from 'chalk'
 import _debug from 'debug'
 import { Metrics } from 'zapshot'
 import { type CLIOptions } from './args'
@@ -13,10 +12,10 @@ export const load = (flags: CLIOptions): ?Metrics => {
     return null
   }
   if (!fs.existsSync(flags.cache)) {
-    debug(`Can\'t load before metrics because '${flags.cache}' doesn't exists`)
+    debug(`Can't load before metrics because '${flags.cache}' doesn't exists`)
     return null
   }
-  
+
   debug(`Try to load '${flags.cache}'`)
   const metricsMap = JSON.parse(fs.readFileSync(flags.cache, 'utf8'))
   return new Metrics(metricsMap)

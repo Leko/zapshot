@@ -1,5 +1,4 @@
 // @flow
-import maxBy from 'lodash/maxBy'
 import sortBy from 'lodash/sortBy'
 import { type Metric } from './metric'
 import { type Metrics } from './metrics'

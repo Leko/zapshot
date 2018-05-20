@@ -1,5 +1,4 @@
 // @flow
-import groupBy from 'lodash/groupBy'
 import { Metric, type MetricProps } from './metric'
 
 export class Metrics {

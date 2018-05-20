@@ -1,3 +1,4 @@
+/* global bench */
 const assert = require('assert')
 const fibonacci = require('./fibonacci')
 

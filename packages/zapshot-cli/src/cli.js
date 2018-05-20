@@ -1,18 +1,13 @@
 #!/usr/bin/env node
 // @flow
-import { cpus } from 'os'
 import glob from 'glob'
 import chalk from 'chalk'
 import flatten from 'lodash/flatten'
 import _debug from 'debug'
 import { type Metric, Metrics, Report, measure, report } from 'zapshot'
 import { ProgressLogger } from './progress-logger'
-import { target, flags, type CLIOptions } from './args'
+import { target, flags } from './args'
 import { load, save } from './cache'
-
-type Result<T> = {
-  value: T,
-}
 
 const main = async (targets, flags) => {
   debug('start measuring:', targets.length, 'cases')
@@ -43,11 +38,11 @@ const targets = glob.sync(target, { absolute: true })
 debug('args:', targets)
 debug('flags:', flags)
 if (targets.length === 0) {
-  console.error(chalk.yellow('No files specified'))
+  console.error(chalk.yellow('No files specified')) // eslint-disable-line no-console
   process.exit(1)
 }
 
 main(targets, flags).catch((e) => {
-  console.error(chalk.red(e.stack))
+  console.error(chalk.red(e.stack)) // eslint-disable-line no-console
   process.exit(1)
 })

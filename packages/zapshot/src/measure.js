@@ -10,13 +10,13 @@ type Option = {|
   +progressLogger: Logger,
 |}
 
+type SetupFunction = (timerify: typeof performance.timerify) => any | Promise<any>
+type TestFunction = (arg: any) => void | Promise<void>
 type Queue = Array<{|
   name: string,
   setup: SetupFunction,
   fn: TestFunction,
 |}>
-type SetupFunction = (timerify: typeof performance.timerify) => any | Promise<any>
-type TestFunction = (arg: any) => void | Promise<void>
 
 export const measure = (target: string, option: Option): Promise<Array<Metric>> => {
   const queue: Queue = []

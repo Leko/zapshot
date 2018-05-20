@@ -1,4 +1,5 @@
 // @flow
+/* eslint-disable no-console */
 import maxBy from 'lodash/maxBy'
 import chalk from 'chalk'
 import { type Report, type Case } from './report'
@@ -20,7 +21,7 @@ export const report = (report: Report, { precision = 2, quiet, threshold }: Repo
 
       console.log(`\n${indent(2)}${caseName}`)
       console.log(`${legend}: ${c.total.toFixed(precision)}ms (mean: ${c.mean.toFixed(precision)}ms) ${humanizeDiff(c.diff, c.diffPercentage, 'ms', { precision, threshold })}`)
-  
+
       const longestMark = maxBy(c.marks, mark => mark.name.length)
       const longestMarkWidth = longestMark ? longestMark.name.length : 0
       const totalMaxWidth = c.marks.length > 0 ? c.marks[0].total.toFixed(precision).length : 0
