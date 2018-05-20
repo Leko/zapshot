@@ -12,6 +12,8 @@ To help performance optimization in your products continuously.
 
 Please refer [examples](https://github.com/Leko/zapshot/tree/master/examples/fibonacci) to help you to understand out concept.
 
+[![zapshot](https://user-images.githubusercontent.com/1424963/40283108-32d3caf2-5cb4-11e8-8a73-d538dbd4933b.gif)](https://asciinema.org/a/182520)
+
 ## Install
 ```
 npm i -g zapshot-cli
