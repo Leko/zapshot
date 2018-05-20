@@ -9,7 +9,7 @@ export type CLIOptions = {|
   step: number,
 |}
 
-const { _: [target], ...flags } = yargs
+export const args = yargs
   .version(pkg.version)
   .option('init', {
     alias: 'i',
@@ -40,7 +40,8 @@ const { _: [target], ...flags } = yargs
     describe: 'Specify the number of iteration on each benchmark',
     default: 50,
   })
-  .argv
+
+const { _: [target], ...flags } = args.argv
 
 export {
   target,
