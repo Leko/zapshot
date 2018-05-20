@@ -7,6 +7,7 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "lint": "eslint --cache .",
+    "lint:fix": "eslint --fix --cache .",
     "build": "lerna exec -- ../../node_modules/.bin/babel src --out-dir dist",
     "flow": "flow --show-all-errors",
     "test": "jest"
@@ -37,6 +38,7 @@
     "@babel/preset-env": "^7.0.0-beta.47",
     "@babel/preset-flow": "^7.0.0-beta.47",
     "@babel/register": "^7.0.0-beta.47",
+    "@ljharb/eslint-config": "^12.2.1",
     "babel-eslint": "^8.2.3",
     "eslint": "^4.19.1",
     "eslint-config-standard": "^11.0.0",
