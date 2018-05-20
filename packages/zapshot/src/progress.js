@@ -14,7 +14,9 @@ export class Progress {
 
   constructor (logger: Logger) {
     this.logger = logger
+    this.total = 0
     this.current = 0
+    this.title = ''
     this.startedAt = new Date()
   }
 
@@ -34,7 +36,7 @@ export class Progress {
       this.logger.tearDown(spent)
     } else {
       const eta = spent / this.current * this.total - spent
-      this.logger.log(this.title || '', this.current, this.total, eta)
+      this.logger.log(this.title, this.current, this.total, eta)
     }
   }
 }
