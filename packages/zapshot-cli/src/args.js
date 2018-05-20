@@ -12,12 +12,12 @@ export type CLIOptions = {|
 const { _: [target], ...flags } = yargs
   .version(pkg.version)
   .option('init', {
-    describe: 'i',
+    alias: 'i',
     describe: 'Create initial metrics',
     type: 'boolean',
   })
   .option('cache', {
-    describe: 'c',
+    alias: 'c',
     describe: 'Path of before metrics',
     type: 'string',
     default: path.join(process.cwd(), '.zapshotcache'),
@@ -35,7 +35,7 @@ const { _: [target], ...flags } = yargs
     default: 20,
   })
   .option('step', {
-    describe: 's',
+    alias: 's',
     type: 'number',
     describe: 'Specify the number of iteration on each benchmark',
     default: 50,
