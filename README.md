@@ -22,7 +22,7 @@ Options:
   --version        Show version number                                 [boolean]
   --init           Create initial metrics                              [boolean]
   --cache          Path of before metrics
-    [string] [default: "/Users/leko/.ghq/github.com/Leko/zapshot/.zapshotcache"]
+                                           [string] [default: "./.zapshotcache"]
   --quiet, -q      Report only summary                [boolean] [default: false]
   --threshold, -t  Percentage of least significant difference (LSD)
                                                           [number] [default: 20]
