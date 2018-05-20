@@ -5,6 +5,12 @@
   "bin": {
     "zapshot": "./dist/cli.js"
   },
+  "files": [
+    "README.md",
+    "package.json",
+    "dist",
+    "src"
+  ],
   "engines": {
     "node": ">=8.0"
   },
