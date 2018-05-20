@@ -1,0 +1,6 @@
+8,9c8,9
+< module.exports = fibonacci
+< // module.exports = optimizedFibonacci
+---
+> // module.exports = fibonacci
+> module.exports = optimizedFibonacci
