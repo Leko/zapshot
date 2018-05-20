@@ -6,6 +6,7 @@
     "zapshot": "./dist/cli.js"
   },
   "files": [
+    "README.md",
     "package.json",
     "dist",
     "src"
@@ -14,7 +15,7 @@
     "node": ">=8.0"
   },
   "scripts": {
-    "prepare": "npm run build",
+    "prepare": "npm run build && cp ../../README.md ./",
     "build": "../../node_modules/.bin/babel src --out-dir dist",
     "test": "../../node_modules/.bin/jest --coverage"
   },
