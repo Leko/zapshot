@@ -31,5 +31,9 @@
   "homepage": "https://github.com/Leko/zapshot#readme",
   "babel": {
     "extends": "../../.babelrc"
+  },
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "lodash": "^4.17.10"
   }
 }
