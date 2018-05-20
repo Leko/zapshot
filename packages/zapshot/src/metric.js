@@ -9,7 +9,7 @@ export type Call = {|
 
 export type MetricProps = {|
   +name: string,
-  +calls: Array < Call >,
+  +calls: Array<Call>,
   +markedCalls: { [name: string]: Array<Call> },
 |}
 
@@ -40,24 +40,34 @@ export class Metric {
     return sortBy(Object.keys(this.markedCalls), mark => -this.getMarkedTotal(mark))
   }
 
-  getMarkedCount (mark: string): number {
+  getMarked (mark: string): ?Array<Call> {
     if (!this.markedCalls[mark]) {
+      return null
+    }
+    return this.markedCalls[mark]
+  }
+
+  getMarkedCount (mark: string): number {
+    const marked = this.getMarked(mark)
+    if (!marked) {
       return -1
     }
-    return this.markedCalls[mark].length
+    return marked.length
   }
 
   getMarkedTotal (mark: string): number {
-    if (!this.markedCalls[mark]) {
+    const marked = this.getMarked(mark)
+    if (!marked) {
       return -1
     }
-    return sumBy(this.markedCalls[mark], 'duration')
+    return sumBy(marked, 'duration')
   }
 
   getMarkedMean (mark: string): number {
-    if (!this.markedCalls[mark]) {
+    const marked = this.getMarked(mark)
+    if (!marked) {
       return -1
     }
-    return meanBy(this.markedCalls[mark], 'duration')
+    return meanBy(marked, 'duration')
   }
 }
