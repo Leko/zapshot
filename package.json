@@ -8,9 +8,9 @@
     "bootstrap": "lerna bootstrap",
     "lint": "eslint --cache .",
     "lint:fix": "eslint --fix --cache .",
-    "build": "lerna exec -- ../../node_modules/.bin/babel src --out-dir dist",
+    "build": "lerna run build",
     "flow": "flow --show-all-errors",
-    "test": "jest"
+    "test": "lerna run test"
   },
   "repository": {
     "type": "git",
