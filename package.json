@@ -1,7 +1,7 @@
 {
   "name": "zapshot",
   "private": true,
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "JavaScript benchmarking tool for Node.js and Browser",
   "main": "index.js",
   "scripts": {
