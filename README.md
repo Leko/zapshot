@@ -1,9 +1,11 @@
 # zapshot
-[![Greenkeeper badge](https://badges.greenkeeper.io/Leko/zapshot.svg)](https://greenkeeper.io/)
+
 [![npm](https://img.shields.io/npm/v/zapshot.svg)](https://www.npmjs.com/package/zapshot)
 [![license](https://img.shields.io/github/license/Leko/zapshot.svg)](https://opensource.org/licenses/MIT)
 [![CircleCI](https://circleci.com/gh/Leko/zapshot.svg?style=svg)](https://circleci.com/gh/Leko/zapshot)
+[![Build status](https://ci.appveyor.com/api/projects/status/n1gdf4ysj0cyqmqu/branch/master?svg=true)](https://ci.appveyor.com/project/Leko/zapshot/branch/master)
 [![codecov](https://codecov.io/gh/Leko/zapshot/branch/master/graph/badge.svg)](https://codecov.io/gh/Leko/zapshot)
+[![Greenkeeper badge](https://badges.greenkeeper.io/Leko/zapshot.svg)](https://greenkeeper.io/)
 
 JavaScript benchmarking tool.
 
@@ -15,14 +17,17 @@ Please refer [examples](https://github.com/Leko/zapshot/tree/master/examples/fib
 [![zapshot](https://user-images.githubusercontent.com/1424963/40283108-32d3caf2-5cb4-11e8-8a73-d538dbd4933b.gif)](https://asciinema.org/a/182520)
 
 ## Install
+
 ```
 npm i -g zapshot-cli
 ```
 
 ### Requirement
-- Node.js 8+
+
+* Node.js 8+
 
 ## Usage
+
 ```
 $ zapshot --help
 Options:
@@ -39,6 +44,7 @@ Options:
 ```
 
 ### Basic usage
+
 ```
 zapshot --init benchmark.js # Create snapshot
 # some optimization
@@ -48,14 +54,16 @@ zapshot benchmark.js # Compare with snapshot
 If you want to update snapshots, please re-run `zapshot --init benchmark.js`.
 
 ## Contribution
-1. Fork this repo
-1. Create your branch like `fix-hoge-foo-bar` `add-hige`
-1. Write your code
-1. Pass all checks (`npm run lint && npm run flow && npm test`)
-1. Commit with [gitmoji](https://gitmoji.carloscuesta.me/)
-1. Submit pull request to `master` branch
+
+1.  Fork this repo
+1.  Create your branch like `fix-hoge-foo-bar` `add-hige`
+1.  Write your code
+1.  Pass all checks (`npm run lint && npm run flow && npm test`)
+1.  Commit with [gitmoji](https://gitmoji.carloscuesta.me/)
+1.  Submit pull request to `master` branch
 
 ## Development
+
 ```
 git clone git@github.com:Leko/zapshot.git
 cd zapshot
@@ -64,4 +72,5 @@ npm run bootstrap
 ```
 
 ## License
+
 This package under [MIT](https://opensource.org/licenses/MIT) license.
