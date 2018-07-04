@@ -1,16 +1,12 @@
 {
   "name": "zapshot-cli",
   "version": "0.1.3",
-  "description": "JavaScript benchmarking tool to help continuous performance optimization",
+  "description":
+    "JavaScript benchmarking tool to help continuous performance optimization",
   "bin": {
     "zapshot": "./dist/cli.js"
   },
-  "files": [
-    "README.md",
-    "package.json",
-    "dist",
-    "src"
-  ],
+  "files": ["README.md", "package.json", "dist", "src"],
   "engines": {
     "node": ">=8.0"
   },
@@ -35,7 +31,8 @@
   "bugs": {
     "url": "https://github.com/Leko/zapshot/issues"
   },
-  "homepage": "https://github.com/Leko/zapshot/tree/master/packages/zapshot-cli",
+  "homepage":
+    "https://github.com/Leko/zapshot/tree/master/packages/zapshot-cli",
   "author": "Leko <leko.noor@gmail.com>",
   "license": "MIT",
   "keywords": [
@@ -50,8 +47,6 @@
     "extends": "../../.babelrc"
   },
   "jest": {
-    "collectCoverageFrom": [
-      "src/*.{js,jsx}"
-    ]
+    "collectCoverageFrom": ["src/*.{js,jsx}"]
   }
 }
