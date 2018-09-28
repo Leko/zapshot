@@ -28,7 +28,11 @@ const main = async (targets, flags) => {
     quiet: flags.quiet,
     threshold: flags.threshold
   };
-  await report(Report.fromMetricses(metrics, beforeMetrics), reportOptions);
+  try {
+    await report(Report.fromMetricses(metrics, beforeMetrics), reportOptions);
+  } catch (error) {
+    process.exit(1);
+  }
   save(metrics, flags);
 };
 
