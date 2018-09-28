@@ -7,7 +7,7 @@ export class ProgressLogger implements Logger {
 
   constructor() {
     // $FlowFixMe(stdout-has-columns)
-    this.width = process.stdout.columns;
+    this.width = process.stdout.columns || 80;
     this.eraser = `\r${" ".repeat(this.width)}\r`;
   }
 
@@ -20,7 +20,7 @@ export class ProgressLogger implements Logger {
         String(total).length +
         etaHumanized.length +
         7);
-    const fillWidth = Math.round(restWidth / total * tick);
+    const fillWidth = Math.round((restWidth / total) * tick);
     const fillBar = "█".repeat(fillWidth);
     const restBar = "░".repeat(restWidth - fillWidth);
     process.stdout.write(
