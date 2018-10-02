@@ -15,14 +15,16 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "package-lock.json" }}
-          - v1-dependencies-
-      - run: npm install
-      - run: npm run bootstrap
+            - v1-dependencies-{{ checksum "package-lock.json" }}
+            - v1-dependencies-
+      - run: npm ci
+      - run: npm run bootstrap --ci
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package-lock.json" }}
+      - run: npm audit
+      - run: npx lerna exec npm audit
       - run: npm run lint
       - run: npm run flow
       - run: npm test
