@@ -20,14 +20,20 @@ afterAll(() => {
 });
 
 test("Can initialize without error", () => {
-  const { error, status } = spawnSync(bin, ["--init", suite]);
+  const { error, stderr, status } = spawnSync(bin, ["--init", suite], {
+    encoding: "utf8"
+  });
   expect(error).toBeUndefined();
+  expect(stderr).toBe("");
   expect(status).toBe(0);
 });
 test("Can compare without error", () => {
   execSync(`patch ${main} < ${dir}${path.sep}optimize.patch`);
 
-  const { error, status } = spawnSync(bin, ["--init", suite]);
+  const { error, stderr, status } = spawnSync(bin, ["--init", suite], {
+    encoding: "utf8"
+  });
   expect(error).toBeUndefined();
+  expect(stderr).toBe("");
   expect(status).toBe(0);
 });
