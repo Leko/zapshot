@@ -42,11 +42,15 @@ export const measure = (
 
       const observer = new PerformanceObserver(list => {
         list.getEntries().forEach(entry => {
-          markedCalls[entry.name] = markedCalls[entry.name] || [];
-          markedCalls[entry.name].push({ duration: entry.duration });
+          if (entry.entryType === "measure") {
+            calls.push({ duration: entry.duration });
+          } else {
+            markedCalls[entry.name] = markedCalls[entry.name] || [];
+            markedCalls[entry.name].push({ duration: entry.duration });
+          }
         });
       });
-      observer.observe({ entryTypes: ["function"] });
+      observer.observe({ entryTypes: ["function", "measure"] });
       const arg = setup(performance.timerify);
 
       for (let i = 0; i < option.step; i++) {
@@ -56,13 +60,9 @@ export const measure = (
         progress.tick();
         performance.mark(`${name}-end`);
         performance.measure(name, `${name}-start`, `${name}-end`);
-
-        const [entry] = observer.getEntriesByName(name);
-        calls.push({ duration: entry.duration });
       }
 
       observer.disconnect();
-      performance.clearFunctions();
 
       metrics.push(
         new Metric({
