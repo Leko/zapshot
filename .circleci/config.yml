@@ -23,6 +23,8 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package-lock.json" }}
+      - run: npm audit
+      - run: npx lerna exec npm audit
       - run: npm run lint
       - run: npm run flow
       - run: npm test
