@@ -15,10 +15,10 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "package-lock.json" }}
-          - v1-dependencies-
-      - run: npm install
-      - run: npm run bootstrap
+            - v1-dependencies-{{ checksum "package-lock.json" }}
+            - v1-dependencies-
+      - run: npm ci
+      - run: npm run bootstrap --ci
       - save_cache:
           paths:
             - node_modules
