@@ -31,6 +31,16 @@
     "url": "https://github.com/Leko/zapshot/issues"
   },
   "homepage": "https://github.com/Leko/zapshot#readme",
+  "changelog": {
+    "labels": {
+      "Type: Breaking Change": "Breaking Change",
+      "Type: Feature": "Feature",
+      "Type: Bug": "Bug",
+      "Type: Maintenance": "Maintenance",
+      "Type: Documentation": "Documentation",
+      "Type: Refactoring": "Refactoring"
+    }
+  },
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.47",
     "@babel/core": "^7.0.0-beta.47",
@@ -43,6 +53,7 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^8.2.3",
     "babel-jest": "^23.0.0",
+    "dotenv-cli": "^1.4.0",
     "eslint": "^5.0.0",
     "eslint-config-prettier": "^3.0.0",
     "eslint-config-standard": "^12.0.0",
@@ -55,6 +66,7 @@
     "husky": "^1.0.0",
     "jest": "^22.4.3",
     "lerna": "^3.4.0",
+    "lerna-changelog": "^0.8.0",
     "prettier": "^1.12.1",
     "pretty-quick": "^1.5.1",
     "regenerator-runtime": "^0.12.0"
