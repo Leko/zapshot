@@ -15,25 +15,27 @@ const suite = path.resolve(
 const dir = path.dirname(suite);
 const main = `${dir}${path.sep}fibonacci.js`;
 
+const assertRun = (bin, args) => {
+  const { error, stderr, status } = spawnSync(bin, args, { encoding: "utf8" });
+  // FIXME: `Warning: Possible perf_hooks memory leak detected` on Node.js 8.12.x
+  const filteredSTDERR = stderr
+    .trim()
+    .split("\n")
+    .filter(line => !line.includes("Possible perf_hooks memory leak detected"))
+    .join("\n");
+  expect(error).toBeUndefined();
+  expect(filteredSTDERR).toBe("");
+  expect(status).toBe(0);
+};
+
 afterAll(() => {
   spawnSync("git", ["checkout", main]);
 });
 
 test("Can initialize without error", () => {
-  const { error, stderr, status } = spawnSync(bin, ["--init", suite], {
-    encoding: "utf8"
-  });
-  expect(error).toBeUndefined();
-  expect(stderr).toBe("");
-  expect(status).toBe(0);
+  assertRun(bin, ["--init", suite]);
 });
 test("Can compare without error", () => {
   execSync(`patch ${main} < ${dir}${path.sep}optimize.patch`);
-
-  const { error, stderr, status } = spawnSync(bin, ["--init", suite], {
-    encoding: "utf8"
-  });
-  expect(error).toBeUndefined();
-  expect(stderr).toBe("");
-  expect(status).toBe(0);
+  assertRun(bin, ["--init", suite]);
 });
