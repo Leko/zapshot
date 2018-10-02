@@ -40,13 +40,13 @@ export const measure = (
       const calls: Array<Call> = [];
       const markedCalls: { [string]: Array<Call> } = {};
 
-      const obs = new PerformanceObserver(list => {
+      const observer = new PerformanceObserver(list => {
         list.getEntries().forEach(entry => {
           markedCalls[entry.name] = markedCalls[entry.name] || [];
           markedCalls[entry.name].push({ duration: entry.duration });
         });
       });
-      obs.observe({ entryTypes: ["function"] });
+      observer.observe({ entryTypes: ["function"] });
       const arg = setup(performance.timerify);
 
       for (let i = 0; i < option.step; i++) {
@@ -57,11 +57,11 @@ export const measure = (
         performance.mark(`${name}-end`);
         performance.measure(name, `${name}-start`, `${name}-end`);
 
-        const [entry] = performance.getEntriesByName(name);
+        const [entry] = observer.getEntriesByName(name);
         calls.push({ duration: entry.duration });
       }
 
-      obs.disconnect();
+      observer.disconnect();
       performance.clearFunctions();
 
       metrics.push(
