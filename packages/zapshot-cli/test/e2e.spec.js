@@ -1,6 +1,5 @@
 /* eslint-env jest */
 import path from "path";
-import assert from "assert";
 import { execSync, spawnSync } from "child_process";
 
 const bin = path.resolve(__dirname, "..", "dist", "cli.js");
