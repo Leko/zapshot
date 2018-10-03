@@ -14,8 +14,14 @@ export const report = (
   report: Report,
   { precision = 2, quiet, threshold }: ReportOptions
 ): Promise<void> => {
+  let hasError = false;
+
   for (let caseName in report.cases) {
     const c: Case = report.cases[caseName];
+
+    if (c.diffPercentage > threshold) {
+      hasError = true;
+    }
 
     if (quiet) {
       console.log(
@@ -44,7 +50,9 @@ export const report = (
       const totalMaxWidth =
         c.marks.length > 0 ? c.marks[0].total.toFixed(precision).length : 0;
       for (let mark of c.marks) {
-        const percentage = (mark.total / c.total * 100).toFixed(0).padStart(5);
+        const percentage = ((mark.total / c.total) * 100)
+          .toFixed(0)
+          .padStart(5);
         console.log(
           `${percentage.padStart(legend.length - 1)}% ${mark.name.padStart(
             longestMarkWidth
@@ -59,7 +67,7 @@ export const report = (
     }
   }
 
-  return Promise.resolve();
+  return hasError ? Promise.reject() : Promise.resolve();
 };
 
 export const indent = (num: number): string => " ".repeat(num);
