@@ -1,6 +1,6 @@
 {
   "name": "zapshot",
-  "version": "0.1.3",
+  "version": "0.2.1",
   "description":
     "JavaScript benchmarking tool to help continuous performance optimization",
   "main": "dist/index.js",
