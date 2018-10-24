@@ -1,10 +1,7 @@
-// @flow
-
 export interface Logger {
   log: (title: string, tick: number, total: number, eta: number) => void;
   tearDown: (spent: number) => void;
 }
-
 export class Progress {
   logger: Logger;
   current: number;
