@@ -48,7 +48,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.5.0",
     "@babel/preset-env": "^7.5.0",
     "@babel/preset-flow": "^7.0.0",
-    "@babel/register": "^7.0.0-beta.47",
+    "@babel/register": "^7.4.4",
     "@ljharb/eslint-config": "^13.0.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^8.2.3",
