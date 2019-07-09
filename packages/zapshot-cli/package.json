@@ -1,19 +1,24 @@
 {
   "name": "zapshot-cli",
   "version": "0.2.1",
-  "description":
-    "JavaScript benchmarking tool to help continuous performance optimization",
+  "description": "JavaScript benchmarking tool to help continuous performance optimization",
   "bin": {
     "zapshot": "./dist/cli.js"
   },
-  "files": ["README.md", "package.json", "dist", "src"],
+  "files": [
+    "README.md",
+    "package.json",
+    "dist",
+    "src"
+  ],
   "engines": {
     "node": ">=8.0"
   },
   "scripts": {
-    "prepare": "npm run build",
+    "prepare": "npm run snyk-protect; npm run build",
     "build": "../../node_modules/.bin/babel src --out-dir dist",
-    "test": "../../node_modules/.bin/jest --coverage"
+    "test": "../../node_modules/.bin/jest --coverage",
+    "snyk-protect": "snyk protect"
   },
   "dependencies": {
     "@turf/center-median": "^6.0.1",
@@ -22,7 +27,8 @@
     "glob": "^7.1.2",
     "lodash": "^4.17.10",
     "yargs": "^11.0.0",
-    "zapshot": "^0.2.1"
+    "zapshot": "^0.2.1",
+    "snyk": "^1.192.4"
   },
   "repository": {
     "type": "git",
@@ -31,8 +37,7 @@
   "bugs": {
     "url": "https://github.com/Leko/zapshot/issues"
   },
-  "homepage":
-    "https://github.com/Leko/zapshot/tree/master/packages/zapshot-cli",
+  "homepage": "https://github.com/Leko/zapshot/tree/master/packages/zapshot-cli",
   "author": "Leko <leko.noor@gmail.com>",
   "license": "MIT",
   "keywords": [
@@ -47,6 +52,9 @@
     "extends": "../../.babelrc"
   },
   "jest": {
-    "collectCoverageFrom": ["src/*.{js,jsx}"]
-  }
+    "collectCoverageFrom": [
+      "src/*.{js,jsx}"
+    ]
+  },
+  "snyk": true
 }
