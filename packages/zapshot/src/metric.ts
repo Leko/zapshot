@@ -1,22 +1,22 @@
-// @flow
 import sumBy from "lodash/sumBy";
 import meanBy from "lodash/meanBy";
 import sortBy from "lodash/sortBy";
-
-export type Call = {|
-  +duration: number
-|};
-
-export type MetricProps = {|
-  +name: string,
-  +calls: Array<Call>,
-  +markedCalls: { [name: string]: Array<Call> }
-|};
-
+export type Call = {
+  readonly duration: number;
+};
+export type MetricProps = {
+  readonly name: string;
+  readonly calls: Array<Call>;
+  readonly markedCalls: {
+    [name: string]: Array<Call>;
+  };
+};
 export class Metric {
-  +name: string;
-  +calls: Array<Call>;
-  +markedCalls: { [marker: string]: Array<Call> };
+  name: string;
+  calls: Array<Call>;
+  markedCalls: {
+    [marker: string]: Array<Call>;
+  };
 
   constructor({ name, calls, markedCalls }: MetricProps) {
     this.name = name;
@@ -39,34 +39,41 @@ export class Metric {
     );
   }
 
-  getMarked(mark: string): ?Array<Call> {
+  getMarked(mark: string): Array<Call> | undefined | null {
     if (!this.markedCalls[mark]) {
       return null;
     }
+
     return this.markedCalls[mark];
   }
 
   getMarkedCount(mark: string): number {
     const marked = this.getMarked(mark);
+
     if (!marked) {
       return -1;
     }
+
     return marked.length;
   }
 
   getMarkedTotal(mark: string): number {
     const marked = this.getMarked(mark);
+
     if (!marked) {
       return -1;
     }
+
     return sumBy(marked, "duration");
   }
 
   getMarkedMean(mark: string): number {
     const marked = this.getMarked(mark);
+
     if (!marked) {
       return -1;
     }
+
     return meanBy(marked, "duration");
   }
 }

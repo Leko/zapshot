@@ -1,20 +1,30 @@
-// @flow
-import { Metric, type MetricProps } from "./metric";
-
+import { Metric, MetricProps } from "./metric";
 export class Metrics {
-  metrics: { [name: string]: Metric };
+  metrics: {
+    [name: string]: Metric;
+  };
 
   static fromArray(metrics: Array<Metric>) {
     const metricsMap = {};
+
     for (let metric of metrics) {
       metricsMap[metric.name] = JSON.parse(JSON.stringify(metric));
     }
 
-    return new Metrics({ metrics: metricsMap });
+    return new Metrics({
+      metrics: metricsMap
+    });
   }
 
-  constructor({ metrics }: { metrics: { [name: string]: MetricProps } }) {
+  constructor({
+    metrics
+  }: {
+    metrics: {
+      [name: string]: MetricProps;
+    };
+  }) {
     this.metrics = {};
+
     for (let name in metrics) {
       this.metrics[name] = new Metric(metrics[name]);
     }
@@ -29,7 +39,7 @@ export class Metrics {
     return Object.values(this.metrics);
   }
 
-  getByName(name: string): ?Metric {
+  getByName(name: string): Metric | undefined | null {
     return this.metrics[name] || null;
   }
 }
