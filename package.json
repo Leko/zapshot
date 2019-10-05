@@ -11,7 +11,9 @@
     "lint:fix": "eslint --fix --cache .",
     "build": "lerna run build",
     "flow": "flow --show-all-errors",
-    "test": "lerna run test"
+    "test": "lerna run test",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -70,5 +72,9 @@
     "prettier": "^1.12.1",
     "pretty-quick": "^1.5.1",
     "regenerator-runtime": "^0.13.0"
+  },
+  "snyk": true,
+  "dependencies": {
+    "snyk": "^1.231.0"
   }
 }
