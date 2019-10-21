@@ -19,7 +19,7 @@
     "@turf/center-median": "^6.0.1",
     "chalk": "^2.4.1",
     "debug": "^3.1.0",
-    "glob": "^7.1.2",
+    "glob": "^7.1.5",
     "lodash": "^4.17.10",
     "yargs": "^11.0.0",
     "zapshot": "^0.2.1"
