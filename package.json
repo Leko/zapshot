@@ -49,7 +49,7 @@
     "@babel/preset-env": "^7.5.2",
     "@babel/preset-flow": "^7.0.0-beta.47",
     "@babel/register": "^7.0.0-beta.47",
-    "@ljharb/eslint-config": "^13.0.0",
+    "@ljharb/eslint-config": "^15.0.1",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.2",
     "babel-jest": "^23.0.0",
