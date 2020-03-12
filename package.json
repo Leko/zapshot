@@ -69,6 +69,6 @@
     "lerna-changelog": "^0.8.0",
     "prettier": "^1.12.1",
     "pretty-quick": "^1.5.1",
-    "regenerator-runtime": "^0.13.0"
+    "regenerator-runtime": "^0.13.5"
   }
 }
